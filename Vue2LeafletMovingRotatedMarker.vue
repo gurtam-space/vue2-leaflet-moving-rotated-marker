@@ -77,7 +77,7 @@
             L.DomEvent.on(this.mapObject, this.$listeners)
             propsBinder(this, this.mapObject, props)
             // Check if has cluster marker as parent and override parent container to skip clustering
-            if (this.$parent.$vnode.componentOptions.tag.indexOf("-marker-cluster") !== -1) {
+            if (this.$parent.$vnode.componentOptions.tag.includes("-marker-cluster")) {
                 this.parentContainer = this.parentContainer.parentContainer;
             }
             this.parentContainer = findRealParent(this.$parent)
